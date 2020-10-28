@@ -7,9 +7,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 part 'model/enum/epub_scroll_direction.dart';
-
 part 'model/epub_locator.dart';
-
 part 'utils/util.dart';
 
 class EpubViewer {
@@ -23,12 +21,12 @@ class EpubViewer {
   /// allowSharing
   /// enableTts is an option to enable the inbuilt Text-to-Speech
   static void setConfig(
-      {Color themeColor = Colors.blue,
+      {Color themeColor = const Color(0xFF00226B),
       String identifier = 'book',
       bool nightMode = false,
       EpubScrollDirection scrollDirection = EpubScrollDirection.ALLDIRECTIONS,
-      bool allowSharing = false,
-      bool enableTts = false}) async {
+      bool allowSharing = true,
+      bool enableTts = true}) async {
     Map<String, dynamic> agrs = {
       "identifier": identifier,
       "themeColor": Util.getHexFromColor(themeColor),

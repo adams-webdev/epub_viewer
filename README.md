@@ -8,12 +8,12 @@ epub_viewer is an epub ebook reader that encapsulates the [folioreader](https://
   It supports iOS and android.
 
 ## Features
-| Name | Android | iOS |
-|------|-------|------|
-| Reading Time Left / Pages left | ✅ | ✅ |
-| Last Read Locator | ✅ | ✅ |
-| Distraction Free Reading | ✅ | ❌ |
-| Load ePub from Asset | ✅ | ✅ |
+//| Name | Android | iOS |
+//|------|-------|------|
+//| Reading Time Left / Pages left | ✅ | ✅ |
+//| Last Read Locator | ✅ | ✅ |
+//| Distraction Free Reading | ✅ | ❌ |
+//| Load ePub from Asset | ✅ | ✅ |
 
 ## ScreenShots
 <a href="#screenshots">

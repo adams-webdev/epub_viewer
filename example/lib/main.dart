@@ -7,6 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
+const bookURL="https://stephenadamsdesign.com/EpubDescription_6574839201hgjfFKGITN_/assets/atlas.epub";
+const primaryColor=Color(0xFF00226B);
+
+
 void main() async {
   runApp(MyApp());
 }
@@ -40,7 +44,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Epub Viewer example app'),
+          backgroundColor: primaryColor,
         ),
         body: Center(
           child: loading
@@ -51,9 +56,9 @@ class _MyAppState extends State<MyApp> {
                         await getApplicationDocumentsDirectory();
                     print('$appDocDir');
 
-                    String iosBookPath = '${appDocDir.path}/chair.epub';
+                    String iosBookPath = '${appDocDir.path}/book.epub';
                     print(iosBookPath);
-                    String androidBookPath = 'file:///android_asset/3.epub';
+                    String androidBookPath = 'file:///android_asset/book.epub';
                     EpubViewer.setConfig(
                         themeColor: Theme.of(context).primaryColor,
                         identifier: "iosBook",
@@ -74,7 +79,7 @@ class _MyAppState extends State<MyApp> {
 //                    );
 
                     await EpubViewer.openAsset(
-                      'assets/4.epub',
+                      'assets/book.epub',
                       lastLocation: EpubLocator.fromJson({
                         "bookId": "2239",
                         "href": "/OEBPS/ch06.xhtml",
@@ -91,7 +96,7 @@ class _MyAppState extends State<MyApp> {
                     });
                   },
                   child: Container(
-                    child: Text('open epub'),
+                    child: Text('Open Book'),
                   ),
                 ),
         ),
@@ -117,15 +122,14 @@ class _MyAppState extends State<MyApp> {
         ? await getExternalStorageDirectory()
         : await getApplicationDocumentsDirectory();
 
-    String path = appDocDir.path + '/chair.epub';
+    String path = appDocDir.path + '/book.epub';
     File file = File(path);
 //    await file.delete();
 
     if (!File(path).existsSync()) {
       await file.create();
       await dio.download(
-        'https://github.com/FolioReader/FolioReaderKit/raw/master/Example/'
-        'Shared/Sample%20eBooks/The%20Silver%20Chair.epub',
+        '$bookURL',
         path,
         deleteOnError: true,
         onReceiveProgress: (receivedBytes, totalBytes) {
