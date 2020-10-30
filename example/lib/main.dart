@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-const bookURL="https://stephenadamsdesign.com/EpubDescription_6574839201hgjfFKGITN_/assets/atlas.epub";
+const bookURL="https://stephenadamsdesign.com/EpubDescription_6574839201hgjfFKGITN_/assets/book.epub";
 const primaryColor=Color(0xFF00226B);
 
 
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Epub Viewer example app'),
+          title: const Text('Epub Viewer Example'),
           backgroundColor: primaryColor,
         ),
         body: Center(
@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
 
                     String iosBookPath = '${appDocDir.path}/book.epub';
                     print(iosBookPath);
-                    String androidBookPath = 'file:///android_asset/book.epub';
+//                    String androidBookPath = 'file:///android_asset/book.epub';
                     EpubViewer.setConfig(
                         themeColor: Theme.of(context).primaryColor,
                         identifier: "iosBook",

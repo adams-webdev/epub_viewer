@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-            title: const Text('Epub Viewer example app'),
+            title: const Text('Epub Reader'),
             backgroundColor: const Color(0xFF00226B)
         ),
         body: Center(
@@ -62,9 +62,9 @@ class _MyAppState extends State<MyApp> {
                   themeColor: Theme.of(context).primaryColor,
                   identifier: "iosBook",
                   scrollDirection: EpubScrollDirection.ALLDIRECTIONS,
-                  allowSharing: true,
+                  allowSharing: false,
                   enableTts: true,
-                  nightMode: true);
+                  nightMode: false);
 //                    EpubViewer.open(
 //                      Platform.isAndroid ? androidBookPath : iosBookPath,
 //                      lastLocation: EpubLocator.fromJson({
@@ -95,7 +95,7 @@ class _MyAppState extends State<MyApp> {
               });
             },
             child: Container(
-              child: Text('Open Book'),
+              child: Text('Read Book'),
             ),
           ),
         ),

@@ -1,6 +1,7 @@
-name: epub_kitty_example
-description: Demonstrates how to use the epub_kitty plugin.
+name: epub_reader
+description: Epub reader using epub_kitty plugin to encapsulate FolioReaderKit
 publish_to: 'none'
+version: 1.0.0+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -25,5 +26,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/
